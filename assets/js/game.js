@@ -424,23 +424,23 @@ class Game {
 		el.classList.add("upgrade");
 
 		let html = "";
-		html += `<h2>${this.upgradeList[upgradeIdx].name}</h2>`;
-		html += `<p class="description">${this.upgradeList[upgradeIdx].description}</p>`;
-		html += `<p>Cost: `;
+		html += `<h2>${tr(this.upgradeList[upgradeIdx].name)}</h2>`;
+		html += `<p class="description">${tr(this.upgradeList[upgradeIdx].description)}</p>`;
+		html += `<p>${tr('text.upgrade.cost')}`;
 		const cost = this.getUpgradeCost(upgradeIdx);
 		let atLeastOne = false;
 		if (cost.wood) {
-			html += `<span class="cost-wood"><span class="cost">${cost.wood}</span> wood</span>`;
+			html += `<span class="cost-wood"><span class="cost">${cost.wood}</span>${tr('resource.wood.suffix')}</span>`;
 			atLeastOne = true;
 		}
 		if (cost.food) {
-			if (atLeastOne) html += `, `;
-			html += `<span class="cost-food"><span class="cost">${cost.food}</span> food</span>`;
+			if (atLeastOne) html += tr('text.symbol.comma');
+			html += `<span class="cost-food"><span class="cost">${cost.food}</span>${tr('resource.food.suffix')}</span>`;
 			atLeastOne = true;
 		}
 		if (cost.stone) {
-			if (atLeastOne) html += `, `;
-			html += `<span class="cost-stone"><span class="cost">${cost.stone}</span> stone</span>`;
+			if (atLeastOne) html += tr('text.symbol.comma');
+			html += `<span class="cost-stone"><span class="cost">${cost.stone}</span>${tr('resource.stone.suffix')}</span>`;
 		}
 		html += `</p>`;
 		el.innerHTML = html;
@@ -614,7 +614,7 @@ class Game {
 	// msg: string, the message to add
 	logMessage(type, msg) {
 		let el = document.createElement("p");
-		el.textContent = msg;
+		el.innerHTML = msg;
 		el.classList.add(type);
 		this.dom.messageArea.prepend(el); // Prepend instead of append because of reverse flexbox direction
 	}
@@ -655,7 +655,7 @@ class Game {
 		this.dom.popupDismiss.click();
 
 		this.dom.messageArea.replaceChildren(); // We don't restore log entries
-		this.logMessage("info", "Game loaded.");
+		this.logMessage("info", tr("log.game-loaded"));
 		return true;
 	}
 

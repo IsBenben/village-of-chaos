@@ -25,18 +25,14 @@ Game.prototype.tutorial = {
 Game.prototype.updatePopups = function () {
 	if (this.wood >= 4 && !this.tutorial.resource) {
 		this.showPopup(
-			`Your current resource count is shown here.`,
+			tr('tutorial.resource-show'),
 			"#warehouse"
 		);
 		this.tutorial.resource = true;
 	}
 	if (this.wood >= 10 && this.food >= 10 && !this.tutorial.tent) {
 		this.showPopup(
-			`Not bad! You now have enough resources to build your first tent.
-			This will invite two villagers to your village. They will be
-			automatically employed as lumberjacks, producing wood for you over
-			time. Click on "Build a tent" in the upgrade list to begin the
-			craft.`,
+			tr('tutorial.build-tent'),
 			"#craft"
 		);
 		this.tutorial.tent = true;
@@ -143,7 +139,7 @@ Game.prototype.updatePopups = function () {
 Game.prototype.showPopup = function (text, atSelector, switchTab) {
 	setTimeout(() => {
 		this.dom.popupShroud.style.display = "block";
-		this.dom.popupText.textContent = text;
+		this.dom.popupText.innerHTML = tr(text);
 
 		// Switch the tab first in case it contains the atSelector element
 		if (switchTab) this.dom[switchTab + "Button"].click();

@@ -6,8 +6,10 @@
 
 class Upgrade {
 	constructor(params = {}) {
+		// 使用翻译key
 		this.name = params?.name; // Primary text, shown as header
 		this.description = params?.description; // Secondary text, shown as paragraph
+
 		this.type = params?.type; // "craft" or "research"
 		this.cost = params?.cost; // An object with at least one of the keys "wood", "food", "stone"
 		this.duration = params?.duration; // Time it takes for the upgrade to complete (in seconds)
@@ -21,8 +23,8 @@ class Upgrade {
 Game.prototype.upgradeList = [
 	// Major system progression upgrades
 	new Upgrade({
-		name: "Build a tent",
-		description: "Has space for two villagers.",
+		name: "upgrade.build_tent.title",
+		description: "upgrade.build_tent.description",
 		type: "craft",
 		cost: {
 			wood: 10,
