@@ -10,14 +10,14 @@ let loop = new GameLoop();
 
 // Wire the game object to the main loop
 loop.onUpdate = function (dt, t) {
-	game.update(dt);
+  game.update(dt);
 };
 loop.onRender = function (i) {
-	game.render();
+  game.render();
 };
 loop.onPanic = function () {
-	// No lag handling at this time - truncate missed updates
-	this.timing.lag = 0;
+  // No lag handling at this time - truncate missed updates
+  this.timing.lag = 0;
 };
 
 // Let's go!

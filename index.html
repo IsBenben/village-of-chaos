@@ -149,8 +149,8 @@
 
 			<!-- Controls for manual resource gathering -->
 			<section id="gathering">
-				<button id="gather-wood"><tr-i18n k="button.gather-wood" /></button>
-				<button id="gather-food"><tr-i18n k="button.gather-food" /></button>
+				<button id="gather-wood"><t-i18n k="button.gather-wood"></t-i18n></button>
+				<button id="gather-food"><t-i18n k="button.gather-food"></t-i18n></button>
 			</section>
 		</section>
 
@@ -158,18 +158,18 @@
 		<section id="side">
 			<!-- Header with title and system controls -->
 			<header>
-				<h1><tr-i18n k="text.title" /></h1>
-				<p><tr-i18n k="text.ver" /></p>
-				<button id="save"><tr-i18n k="button.save" /></button>
-				<button id="load"><tr-i18n k="button.load" /></button>
-				<button id="reset"><tr-i18n k="button.reset" /></button>
+				<h1><t-i18n k="text.title"></t-i18n></h1>
+				<p><t-i18n k="text.ver"></t-i18n></p>
+				<button id="save"><t-i18n k="button.save"></t-i18n></button>
+				<button id="load"><t-i18n k="button.load"></t-i18n></button>
+				<button id="reset"><t-i18n k="button.reset"></t-i18n></button>
 			</header>
 
 			<!-- Information section about current resources and multipliers -->
 			<section id="warehouse">
 				<div>
 					<p class="resource wood">
-						<span class="resource-name"><tr-i18n k="resource.wood.prefix" /></span>
+						<span class="resource-name"><t-i18n k="resource.wood.prefix"></t-i18n></span>
 						<span class="resource-amount" id="wood-amount"></span>
 						<br />
 						<span class="income">
@@ -177,7 +177,7 @@
 						</span>
 					</p>
 					<p class="resource food">
-						<span class="resource-name"><tr-i18n k="resource.food.prefix" /></span>
+						<span class="resource-name"><t-i18n k="resource.food.prefix"></t-i18n></span>
 						<span class="resource-amount" id="food-amount"></span>
 						<br />
 						<span class="income">
@@ -185,7 +185,7 @@
 						</span>
 					</p>
 					<p class="resource stone">
-						<span class="resource-name"><tr-i18n k="resource.stone.prefix" /></span>
+						<span class="resource-name"><t-i18n k="resource.stone.prefix"></t-i18n></span>
 						<span class="resource-amount" id="stone-amount"></span>
 						<br />
 						<span class="income">
@@ -195,12 +195,12 @@
 				</div>
 				<div>
 					<p class="multiplier craft-speed">
-						<span class="multiplier-name"><tr-i18n k="production.crafting" /></span>
+						<span class="multiplier-name"><t-i18n k="production.craft.multiplier"></t-i18n></span>
 						<span class="multiplier-amount" id="craft-speed"></span
 						>x
 					</p>
 					<p class="multiplier research-speed">
-						<span class="multiplier-name"><tr-i18n k="production.research" /></span>
+						<span class="multiplier-name"><t-i18n k="production.research.multiplier"></t-i18n></span>
 						<span
 							class="multiplier-amount"
 							id="research-speed"
@@ -217,28 +217,28 @@
 					<div class="job tent">
 						<h2>Tent</h2>
 						<p class="job-details">
-							Lv.
+							<t-i18n k="job.lv"></t-i18n>
 							<span class="job-level" id="tent-level"></span>
 						</p>
 						<div class="villager">
 							<p>
-								<span class="job-count" id="lumberjack"></span>
-								villagers chopping down trees
+								<span class="job-count" id="lumberjack"></span
+								><t-i18n k="job.chopping-villagers"></t-i18n>
 							</p>
 						</div>
 					</div>
 					<div class="job pier">
 						<h2>Pier</h2>
 						<p class="job-details">
-							Lv. <span class="job-level" id="pier-level"></span>
+							<t-i18n k="job.lv"></t-i18n
+							><span class="job-level" id="pier-level"></span>
 							<span class="chaos"
-								>(<span id="pier-chaos"></span>% chaos)</span
+								>(<span id="pier-chaos"></span>%<t-i18n k="job.chaos"></t-i18n>)</span
 							>
 						</p>
 						<div class="assignment villager">
 							<p>
-								Villagers:
-								<span
+								<t-i18n k="job.villagers"></t-i18n><span
 									class="job-count"
 									id="fisherman-villager"
 								></span>
@@ -250,8 +250,7 @@
 						</div>
 						<div class="assignment mentor">
 							<p>
-								Mentors:
-								<span
+								<t-i18n k="job.mentors"></t-i18n><span
 									class="job-count"
 									id="fisherman-mentor"
 								></span>
@@ -263,8 +262,7 @@
 						</div>
 						<div class="assignment manager">
 							<p>
-								Managers:
-								<span
+								<t-18n k="job.managers"></t-18n><span
 									class="job-count"
 									id="fisherman-manager"
 								></span>
@@ -278,16 +276,15 @@
 					<div class="job quarry">
 						<h2>Quarry</h2>
 						<p class="job-details">
-							Lv.
+							<t-i18n k="job.lv"></t-i18n>
 							<span class="job-level" id="quarry-level"></span>
 							<span class="chaos"
-								>(<span id="quarry-chaos"></span>% chaos)</span
+								>(<span id="quarry-chaos"></span>%<t-i18n k="job.chaos"></t-i18n><span>)</span></span
 							>
 						</p>
 						<div class="assignment villager">
 							<p>
-								Villagers:
-								<span
+								<t-i18n k="job.villagers"></t-i18n><span
 									class="job-count"
 									id="miner-villager"
 								></span>
@@ -299,8 +296,7 @@
 						</div>
 						<div class="assignment mentor">
 							<p>
-								Mentors:
-								<span
+								<t-i18n k="job.mentors"></t-i18n><span
 									class="job-count"
 									id="miner-mentor"
 								></span>
@@ -312,8 +308,7 @@
 						</div>
 						<div class="assignment manager">
 							<p>
-								Managers:
-								<span
+								<t-18n k="job.managers"></t-18n><span
 									class="job-count"
 									id="miner-manager"
 								></span>
@@ -327,16 +322,15 @@
 					<div class="job smithy">
 						<h2>Smithy</h2>
 						<p class="job-details">
-							Lv.
+							<t-i18n k="job.lv"></t-i18n>
 							<span class="job-level" id="smithy-level"></span>
 							<span class="chaos"
-								>(<span id="smithy-chaos"></span>% chaos)</span
+								>(<span id="smithy-chaos"></span>%<t-i18n k="job.chaos"></t-i18n>)</span
 							>
 						</p>
 						<div class="assignment villager">
 							<p>
-								Villagers:
-								<span
+								<t-i18n k="job.villagers"></t-i18n><span
 									class="job-count"
 									id="blacksmith-villager"
 								></span>
@@ -348,8 +342,7 @@
 						</div>
 						<div class="assignment mentor">
 							<p>
-								Mentors:
-								<span
+								<t-i18n k="job.mentors"></t-i18n><span
 									class="job-count"
 									id="blacksmith-mentor"
 								></span>
@@ -361,8 +354,7 @@
 						</div>
 						<div class="assignment manager">
 							<p>
-								Managers:
-								<span
+								<t-18n k="job.managers"></t-18n><span
 									class="job-count"
 									id="blacksmith-manager"
 								></span>
@@ -376,16 +368,15 @@
 					<div class="job academy">
 						<h2>Academy</h2>
 						<p class="job-details">
-							Lv.
+							<t-i18n k="job.lv"></t-i18n>
 							<span class="job-level" id="academy-level"></span>
 							<span class="chaos"
-								>(<span id="academy-chaos"></span>% chaos)</span
+								>(<span id="academy-chaos"></span>%<t-i18n k="job.chaos"></t-i18n>)</span
 							>
 						</p>
 						<div class="assignment villager">
 							<p>
-								Villagers:
-								<span
+								<t-i18n k="job.villagers"></t-i18n><span
 									class="job-count"
 									id="professor-villager"
 								></span>
@@ -397,8 +388,7 @@
 						</div>
 						<div class="assignment mentor">
 							<p>
-								Mentors:
-								<span
+								<t-i18n k="job.mentors"></t-i18n><span
 									class="job-count"
 									id="professor-mentor"
 								></span>
@@ -410,8 +400,7 @@
 						</div>
 						<div class="assignment manager">
 							<p>
-								Managers:
-								<span
+								<t-18n k="job.managers"></t-18n><span
 									class="job-count"
 									id="professor-manager"
 								></span>
@@ -438,13 +427,13 @@
 			<!-- Buttons for switching between tabs -->
 			<nav>
 				<button class="tab-button" id="assign-button">
-					<tr-i18n k="production.assign" />
+					<t-i18n k="production.assign"></t-i18n>
 				</button>
 				<button class="tab-button" id="craft-button">
-					<tr-i18n k="production.craft" />
+					<t-i18n k="production.craft"></t-i18n>
 				</button>
 				<button class="tab-button" id="research-button">
-					<tr-i18n k="production.research" />
+					<t-i18n k="production.research"></t-i18n>
 				</button>
 			</nav>
 		</section>
@@ -466,7 +455,7 @@
 				<p id="popup-text">
 					<!-- Filled in by JS -->
 				</p>
-				<button id="popup-dismiss"><tr-i18n k="button.okay" /></button>
+				<button id="popup-dismiss"><t-i18n k="button.okay"></t-i18n></button>
 			</div>
 		</div>
 
