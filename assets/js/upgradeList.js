@@ -23,8 +23,8 @@ class Upgrade {
 Game.prototype.upgradeList = [
 	// Major system progression upgrades
 	new Upgrade({
-		name: "upgrade.build_tent.title",
-		description: "upgrade.build_tent.description",
+		name: "upgrade.build-tent.title",
+		description: "upgrade.build-tent.description",
 		type: "craft",
 		cost: {
 			wood: 10,

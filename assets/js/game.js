@@ -189,7 +189,7 @@ class Game {
 				the settlement.`,
 				"Begin"
 			);
-			this.logMessage("info", "Welcome to Village of Chaos!");
+			this.logMessage("info", 'log.info.welcome');
 			this.showPopup(
 				// Defined in tutorial.js
 				`Welcome to Village of Chaos! In this game you will collect
@@ -614,7 +614,7 @@ class Game {
 	// msg: string, the message to add
 	logMessage(type, msg) {
 		let el = document.createElement("p");
-		el.innerHTML = msg;
+		el.innerHTML = `<t-i18n k="${msg}"></t-i18n>`;
 		el.classList.add(type);
 		this.dom.messageArea.prepend(el); // Prepend instead of append because of reverse flexbox direction
 	}
@@ -636,7 +636,7 @@ class Game {
 		for (let field of this.serializable) state[field] = this[field];
 		localStorage.setItem("savegame", JSON.stringify(state));
 
-		this.logMessage("info", "Game saved.");
+		this.logMessage("info", "log.info.game-saved");
 	}
 
 	// Load the game state from cookies
@@ -655,7 +655,7 @@ class Game {
 		this.dom.popupDismiss.click();
 
 		this.dom.messageArea.replaceChildren(); // We don't restore log entries
-		this.logMessage("info", tr("log.game-loaded"));
+		this.logMessage("info", "log.info.game-loaded");
 		return true;
 	}
 
@@ -667,7 +667,8 @@ class Game {
 
 	// Apocalypse
 	gameOver() {
-		document.write("== END TRANSMISSION");
+		// document.write("== END TRANSMISSION");
+		document.innerHTML = '<t-i18n k="text.end-transmission"></t-i18n>';
 	}
 
 	// Instantly get enough resources to beat the game
