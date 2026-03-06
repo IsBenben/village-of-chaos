@@ -8,10 +8,38 @@
 		<!-- Meta -->
 		<meta
 			name="description"
-			content="A short idle game about management."
+			content="本地化版本。《混乱村庄》（Village of Chaos）游戏是一个简短的文字放置游戏，在这个游戏中，你将会收集资源，邀请村民并建造新建筑，感受独特的游戏体验。免费在线游玩，支持多语言。"
 		/>
+		<meta name="author" content="Tearnote" />
+		<meta name="robots" content="index, follow" />
 		<meta name="theme-color" content="#768c38" />
-		<title>Village of Chaos</title>
+		<title>Village of Chaos - 混乱村庄</title>
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://isbenben.github.io/village-of-chaos/" />
+		<meta property="og:title" content="Village of Chaos - 混乱村庄" />
+		<meta
+			property="og:description"
+			content="《混乱村庄》（Village of Chaos）游戏是一个简短的文字放置游戏，在这个游戏中，你将会收集资源，邀请村民并建造新建筑，感受独特的游戏体验。免费在线游玩，支持多语言。"
+		/>
+		<meta property="og:image" content="https://isbenben.github.io/village-of-chaos/doc/mockup.png" />
+		<meta property="og:locale" content="zh_CN" />
+		<meta property="og:locale:alternate" content="en_US" />
+		<meta property="og:locale:alternate" content="zh_TW" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://isbenben.github.io/village-of-chaos/" />
+		<meta property="twitter:title" content="Village of Chaos - 混乱村庄" />
+		<meta
+			property="twitter:description"
+			content="《混乱村庄》（Village of Chaos）游戏是一个简短的文字放置游戏，在这个游戏中，你将会收集资源，邀请村民并建造新建筑，感受独特的游戏体验。免费在线游玩，支持多语言。"
+		/>
+		<meta property="twitter:image" content="https://isbenben.github.io/village-of-chaos/doc/mockup.png" />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://isbenben.github.io/village-of-chaos/" />
 
 		<!-- Favicon -->
 		<link
@@ -43,6 +71,12 @@
 			rel="stylesheet"
 		/>
 
+		<!-- 本地化相关JS -->
+		<script defer src="assets/js/i18n/en_us.js"></script>
+		<script defer src="assets/js/i18n/zh_cn.js"></script>
+		<script defer src="assets/js/i18n/zh_hant.js"></script>
+		<script defer src="assets/js/i18n/main.js"></script>
+
 		<!-- Scripts. Do not reorder! -->
 		<script defer src="assets/js/vendor/gameloop.js"></script>
 		<script defer src="assets/js/util.js"></script>
@@ -54,12 +88,14 @@
 	</head>
 	<body>
 		<!-- Javascript is required -->
+		<!-- 未启用JS不支持自定义元素，需硬编码本地化文本 -->
 		<noscript>
 			<h1>Village of Chaos</h1>
 			<p>
-				This game requires Javascript to function. Please enable
-				Javascript for this website, or use a supported browser to play
-				Village of Chaos.
+				This game requires Javascript to function. Please enable Javascript for this website, or use a supported browser to play Village of Chaos.
+			</p>
+			<p>
+				该游戏需要Javascript才能运行。请使用支持的浏览器或启用Javascript来游玩Village of Chaos。
 			</p>
 		</noscript>
 
@@ -141,8 +177,8 @@
 
 			<!-- Controls for manual resource gathering -->
 			<section id="gathering">
-				<button id="gather-wood">Gather wood</button>
-				<button id="gather-food">Gather food</button>
+				<button id="gather-wood"><t-i18n k="button.gather-wood"></t-i18n></button>
+				<button id="gather-food"><t-i18n k="button.gather-food"></t-i18n></button>
 			</section>
 		</section>
 
@@ -150,18 +186,19 @@
 		<section id="side">
 			<!-- Header with title and system controls -->
 			<header>
-				<h1>Village of Chaos</h1>
-				<p>ver. 1.0</p>
-				<button id="save">Save</button>
-				<button id="load">Load</button>
-				<button id="reset">Reset</button>
+				<h1><t-i18n k="text.title"></t-i18n></h1>
+				<p><t-i18n k="text.ver"></t-i18n></p>
+				<button id="language"><t-i18n k="button.language"></t-i18n></button>
+				<button id="save"><t-i18n k="button.save"></t-i18n></button>
+				<button id="load"><t-i18n k="button.load"></t-i18n></button>
+				<button id="reset"><t-i18n k="button.reset"></t-i18n></button>
 			</header>
 
 			<!-- Information section about current resources and multipliers -->
 			<section id="warehouse">
 				<div>
 					<p class="resource wood">
-						<span class="resource-name">Wood:</span>
+						<span class="resource-name"><t-i18n k="resource.wood.prefix"></t-i18n></span>
 						<span class="resource-amount" id="wood-amount"></span>
 						<br />
 						<span class="income">
@@ -169,7 +206,7 @@
 						</span>
 					</p>
 					<p class="resource food">
-						<span class="resource-name">Food:</span>
+						<span class="resource-name"><t-i18n k="resource.food.prefix"></t-i18n></span>
 						<span class="resource-amount" id="food-amount"></span>
 						<br />
 						<span class="income">
@@ -177,7 +214,7 @@
 						</span>
 					</p>
 					<p class="resource stone">
-						<span class="resource-name">Stone:</span>
+						<span class="resource-name"><t-i18n k="resource.stone.prefix"></t-i18n></span>
 						<span class="resource-amount" id="stone-amount"></span>
 						<br />
 						<span class="income">
@@ -187,12 +224,12 @@
 				</div>
 				<div>
 					<p class="multiplier craft-speed">
-						<span class="multiplier-name">Crafting:</span>
+						<span class="multiplier-name"><t-i18n k="production.craft.multiplier"></t-i18n></span>
 						<span class="multiplier-amount" id="craft-speed"></span
 						>x
 					</p>
 					<p class="multiplier research-speed">
-						<span class="multiplier-name">Research:</span>
+						<span class="multiplier-name"><t-i18n k="production.research.multiplier"></t-i18n></span>
 						<span
 							class="multiplier-amount"
 							id="research-speed"
@@ -207,30 +244,30 @@
 				<!-- Assign tab - assign villagers to jobs -->
 				<div id="assign">
 					<div class="job tent">
-						<h2>Tent</h2>
+						<h2><t-i18n k="job.tent"></t-i18n></h2>
 						<p class="job-details">
-							Lv.
+							<t-i18n k="job.lv"></t-i18n>
 							<span class="job-level" id="tent-level"></span>
 						</p>
 						<div class="villager">
 							<p>
-								<span class="job-count" id="lumberjack"></span>
-								villagers chopping down trees
+								<span class="job-count" id="lumberjack"></span
+								><t-i18n k="job.chopping-villagers"></t-i18n>
 							</p>
 						</div>
 					</div>
 					<div class="job pier">
-						<h2>Pier</h2>
+						<h2><t-i18n k="job.pier"></t-i18n></h2>
 						<p class="job-details">
-							Lv. <span class="job-level" id="pier-level"></span>
+							<t-i18n k="job.lv"></t-i18n
+							><span class="job-level" id="pier-level"></span>
 							<span class="chaos"
-								>(<span id="pier-chaos"></span>% chaos)</span
+								>(<span id="pier-chaos"></span>%<t-i18n k="job.chaos"></t-i18n>)</span
 							>
 						</p>
 						<div class="assignment villager">
 							<p>
-								Villagers:
-								<span
+								<t-i18n k="job.villagers"></t-i18n><span
 									class="job-count"
 									id="fisherman-villager"
 								></span>
@@ -242,8 +279,7 @@
 						</div>
 						<div class="assignment mentor">
 							<p>
-								Mentors:
-								<span
+								<t-i18n k="job.mentors"></t-i18n><span
 									class="job-count"
 									id="fisherman-mentor"
 								></span>
@@ -255,8 +291,7 @@
 						</div>
 						<div class="assignment manager">
 							<p>
-								Managers:
-								<span
+								<t-18n k="job.managers"></t-18n><span
 									class="job-count"
 									id="fisherman-manager"
 								></span>
@@ -268,18 +303,17 @@
 						</div>
 					</div>
 					<div class="job quarry">
-						<h2>Quarry</h2>
+						<h2><t-i18n k="job.quarry"></t-i18n></h2>
 						<p class="job-details">
-							Lv.
+							<t-i18n k="job.lv"></t-i18n>
 							<span class="job-level" id="quarry-level"></span>
 							<span class="chaos"
-								>(<span id="quarry-chaos"></span>% chaos)</span
+								>(<span id="quarry-chaos"></span>%<t-i18n k="job.chaos"></t-i18n><span>)</span></span
 							>
 						</p>
 						<div class="assignment villager">
 							<p>
-								Villagers:
-								<span
+								<t-i18n k="job.villagers"></t-i18n><span
 									class="job-count"
 									id="miner-villager"
 								></span>
@@ -291,8 +325,7 @@
 						</div>
 						<div class="assignment mentor">
 							<p>
-								Mentors:
-								<span
+								<t-i18n k="job.mentors"></t-i18n><span
 									class="job-count"
 									id="miner-mentor"
 								></span>
@@ -304,8 +337,7 @@
 						</div>
 						<div class="assignment manager">
 							<p>
-								Managers:
-								<span
+								<t-18n k="job.managers"></t-18n><span
 									class="job-count"
 									id="miner-manager"
 								></span>
@@ -317,18 +349,17 @@
 						</div>
 					</div>
 					<div class="job smithy">
-						<h2>Smithy</h2>
+						<h2><t-i18n k="job.smithy"></t-i18n></h2>
 						<p class="job-details">
-							Lv.
+							<t-i18n k="job.lv"></t-i18n>
 							<span class="job-level" id="smithy-level"></span>
 							<span class="chaos"
-								>(<span id="smithy-chaos"></span>% chaos)</span
+								>(<span id="smithy-chaos"></span>%<t-i18n k="job.chaos"></t-i18n>)</span
 							>
 						</p>
 						<div class="assignment villager">
 							<p>
-								Villagers:
-								<span
+								<t-i18n k="job.villagers"></t-i18n><span
 									class="job-count"
 									id="blacksmith-villager"
 								></span>
@@ -340,8 +371,7 @@
 						</div>
 						<div class="assignment mentor">
 							<p>
-								Mentors:
-								<span
+								<t-i18n k="job.mentors"></t-i18n><span
 									class="job-count"
 									id="blacksmith-mentor"
 								></span>
@@ -353,8 +383,7 @@
 						</div>
 						<div class="assignment manager">
 							<p>
-								Managers:
-								<span
+								<t-18n k="job.managers"></t-18n><span
 									class="job-count"
 									id="blacksmith-manager"
 								></span>
@@ -366,18 +395,17 @@
 						</div>
 					</div>
 					<div class="job academy">
-						<h2>Academy</h2>
+						<h2><t-i18n k="job.academy"></t-i18n></h2>
 						<p class="job-details">
-							Lv.
+							<t-i18n k="job.lv"></t-i18n>
 							<span class="job-level" id="academy-level"></span>
 							<span class="chaos"
-								>(<span id="academy-chaos"></span>% chaos)</span
+								>(<span id="academy-chaos"></span>%<t-i18n k="job.chaos"></t-i18n>)</span
 							>
 						</p>
 						<div class="assignment villager">
 							<p>
-								Villagers:
-								<span
+								<t-i18n k="job.villagers"></t-i18n><span
 									class="job-count"
 									id="professor-villager"
 								></span>
@@ -389,8 +417,7 @@
 						</div>
 						<div class="assignment mentor">
 							<p>
-								Mentors:
-								<span
+								<t-i18n k="job.mentors"></t-i18n><span
 									class="job-count"
 									id="professor-mentor"
 								></span>
@@ -402,8 +429,7 @@
 						</div>
 						<div class="assignment manager">
 							<p>
-								Managers:
-								<span
+								<t-18n k="job.managers"></t-18n><span
 									class="job-count"
 									id="professor-manager"
 								></span>
@@ -429,10 +455,14 @@
 
 			<!-- Buttons for switching between tabs -->
 			<nav>
-				<button class="tab-button" id="assign-button">Assign</button>
-				<button class="tab-button" id="craft-button">Craft</button>
+				<button class="tab-button" id="assign-button">
+					<t-i18n k="production.assign"></t-i18n>
+				</button>
+				<button class="tab-button" id="craft-button">
+					<t-i18n k="production.craft"></t-i18n>
+				</button>
 				<button class="tab-button" id="research-button">
-					Research
+					<t-i18n k="production.research"></t-i18n>
 				</button>
 			</nav>
 		</section>
@@ -441,7 +471,8 @@
 		<section id="log">
 			<button id="log-expand">
 				Log hide/expand
-				<!-- Text replaced via CSS -->
+				<span class="visible-text"><t-i18n k="button.collapse-log"></t-i18n></span>
+				<span class="invisible-text"><t-i18n k="button.expand-log"></t-i18n></span>
 			</button>
 			<div id="message-area">
 				<!-- Filled in by JS -->
@@ -454,7 +485,7 @@
 				<p id="popup-text">
 					<!-- Filled in by JS -->
 				</p>
-				<button id="popup-dismiss">Okay</button>
+				<button id="popup-dismiss"><t-i18n k="button.okay"></t-i18n></button>
 			</div>
 		</div>
 
@@ -469,5 +500,42 @@
 				<!-- Filled in by JS-->
 			</button>
 		</div>
+
+		<!-- 语言选择界面 -->
+		<div id="language-shroud">
+			<div id="language-popup">
+				<h2><t-i18n k="button.language"></t-i18n></h2>
+				<div id="language-options">
+					<!-- Filled in by JS -->
+				</div>
+				<button id="language-dismiss"><t-i18n k="button.complete"></t-i18n></button>
+			</div>
+		</div>
+
+		<!-- Structured Data for SEO -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebApplication",
+			"name": "Village of Chaos",
+			"alternateName": ["混乱村庄", "Village of Chaos - 混乱村庄"],
+			"description": "《混乱村庄》（Village of Chaos）游戏是一个简短的文字放置游戏，在这个游戏中，你将会收集资源，邀请村民并建造新建筑，感受独特的游戏体验。免费在线游玩，支持多语言。",
+			"url": "https://isbenben.github.io/village-of-chaos/",
+			"applicationCategory": "Game",
+			"genre": ["放置游戏", "增量游戏", "策略游戏", "Incremental Game", "Idle Game", "Strategy Game"],
+			"operatingSystem": "Any",
+			"browserRequirements": "Requires JavaScript. Compatible with modern browsers (Chrome, Firefox, Safari, Edge).",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			},
+			"inLanguage": ["en-US", "zh-CN", "zh-TW"],
+			"author": {
+				"@type": "Person",
+				"name": "Tearnote（原始作者）/ IsBenben（汉化fork）"
+			}
+		}
+		</script>
 	</body>
 </html>

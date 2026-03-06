@@ -6,8 +6,10 @@
 
 class Upgrade {
 	constructor(params = {}) {
+		// 使用翻译key
 		this.name = params?.name; // Primary text, shown as header
 		this.description = params?.description; // Secondary text, shown as paragraph
+
 		this.type = params?.type; // "craft" or "research"
 		this.cost = params?.cost; // An object with at least one of the keys "wood", "food", "stone"
 		this.duration = params?.duration; // Time it takes for the upgrade to complete (in seconds)
@@ -21,8 +23,8 @@ class Upgrade {
 Game.prototype.upgradeList = [
 	// Major system progression upgrades
 	new Upgrade({
-		name: "Build a tent",
-		description: "Has space for two villagers.",
+		name: "upgrade.build-tent.title",
+		description: "upgrade.build-tent.description",
 		type: "craft",
 		cost: {
 			wood: 10,
@@ -35,15 +37,12 @@ Game.prototype.upgradeList = [
 			game.lumberjack += 2;
 			game.unlock("assign");
 			game.unlock("income");
-			game.logMessage(
-				"event",
-				"Two villagers have joined your settlement."
-			);
+			game.logMessage("event", "log.event.build-tent");
 		},
 	}),
 	new Upgrade({
-		name: "Expand the tent",
-		description: "Add another bed to fit in an extra villager.",
+		name: "upgrade.expand-tent.title",
+		description: "upgrade.expand-tent.description",
 		type: "craft",
 		cost: {
 			wood: 20,
@@ -56,15 +55,12 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.levels.tent += 1;
 			game.lumberjack += 1;
-			game.logMessage(
-				"event",
-				"One extra villager has joined your settlement."
-			);
+			game.logMessage("event", "log.event.expand-tent");
 		},
 	}),
 	new Upgrade({
-		name: "Build a pier",
-		description: "Construct a pier for your villagers to fish from.",
+		name: "upgrade.build-pier.title",
+		description: "upgrade.build-pier.description",
 		type: "craft",
 		cost: {
 			wood: 100,
@@ -75,15 +71,12 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.levels.pier += 1;
 			game.unlock("fisherman");
-			game.logMessage(
-				"event",
-				"You built a pier, and can now assign fishermen."
-			);
+			game.logMessage("event", "log.event.build-pier");
 		},
 	}),
 	new Upgrade({
-		name: "Extend the pier",
-		description: "A longer pier gives access to bigger fish.",
+		name: "upgrade.extend-pier.title",
+		description: "upgrade.extend-pier.description",
 		type: "craft",
 		cost: {
 			wood: 200,
@@ -95,15 +88,12 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.production.fisherman *= 2;
 			game.levels.pier += 1;
-			game.logMessage(
-				"event",
-				"Your fishermen can now catch bigger fish."
-			);
+			game.logMessage("event", "log.event.extend-pier");
 		},
 	}),
 	new Upgrade({
-		name: "Build a quarry",
-		description: "Dig into the mountainside to mine for stone.",
+		name: "upgrade.build-quarry.title",
+		description: "upgrade.build-quarry.description",
 		type: "craft",
 		cost: {
 			wood: 200,
@@ -114,16 +104,13 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.unlock("stone");
 			game.unlock("miner");
-			game.logMessage(
-				"event",
-				"You built a quarry, and can now assign miners."
-			);
+			game.logMessage("event", "log.event.build-quarry");
 			game.levels.quarry += 1;
 		},
 	}),
 	new Upgrade({
-		name: "Develop the quarry",
-		description: "Add another tunnel to reach new stone veins.",
+		name: "upgrade.develop-quarry.title",
+		description: "upgrade.develop-quarry.description",
 		type: "craft",
 		cost: {
 			wood: 250,
@@ -136,12 +123,12 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.levels.quarry += 1;
 			game.production.miner *= 2;
-			game.logMessage("event", "Your quarry now reaches deeper.");
+			game.logMessage("event", "log.event.develop-quarry");
 		},
 	}),
 	new Upgrade({
-		name: "Build a smithy",
-		description: "Assign blacksmiths to help you complete crafts faster.",
+		name: "upgrade.build-smithy.title",
+		description: "upgrade.build-smithy.description",
 		type: "craft",
 		cost: {
 			wood: 200,
@@ -154,12 +141,12 @@ Game.prototype.upgradeList = [
 			game.levels.smithy += 1;
 			game.unlock("blacksmith");
 			game.unlock("craftSpeed");
-			game.logMessage("event", "You built a smithy! Nice!");
+			game.logMessage("event", "log.event.build-smithy");
 		},
 	}),
 	new Upgrade({
-		name: "Modernize the smithy",
-		description: "Get some new tools to make your blacksmiths happier.",
+		name: "upgrade.modernize-smithy.title",
+		description: "upgrade.modernize-smithy.description",
 		type: "craft",
 		cost: {
 			wood: 400,
@@ -172,16 +159,12 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.levels.smithy += 1;
 			game.production.blacksmith *= 0.75;
-			game.logMessage(
-				"event",
-				"Your blacksmiths will now be even more helpful."
-			);
+			game.logMessage("event", "log.event.modernize-smithy");
 		},
 	}),
 	new Upgrade({
-		name: "Build an academy",
-		description:
-			"Dedicate some village space towards all kinds of research.",
+		name: "upgrade.build-academy.title",
+		description: "upgrade.build-academy.description",
 		type: "craft",
 		cost: {
 			wood: 1000,
@@ -195,15 +178,12 @@ Game.prototype.upgradeList = [
 			game.unlock("professor");
 			game.unlock("research");
 			game.unlock("researchSpeed");
-			game.logMessage(
-				"event",
-				"Your academy is now open. What will you learn?"
-			);
+			game.logMessage("event", "log.event.build-academy");
 		},
 	}),
 	new Upgrade({
-		name: "Grow the academy",
-		description: "Advance your knowledge in new fields.",
+		name: "upgrade.grow-academy.title",
+		description: "upgrade.grow-academy.description",
 		type: "craft",
 		cost: {
 			wood: 1500,
@@ -216,15 +196,12 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.levels.academy += 1;
 			game.production.professor *= 0.75;
-			game.logMessage(
-				"event",
-				"You expand your understanding of the world."
-			);
+			game.logMessage("event", "log.event.grow-academy");
 		},
 	}),
 	new Upgrade({
-		name: "Mentorship program",
-		description: "What if you got one person to oversee another?",
+		name: "upgrade.mentorship-program.title",
+		description: "upgrade.mentorship-program.description",
 		type: "research",
 		cost: {
 			food: 1500,
@@ -235,15 +212,12 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.mentorUnlocked = true;
 			game.unlock("mentor");
-			game.logMessage(
-				"event",
-				"Turns out mentors training novices is a pretty good idea!"
-			);
+			game.logMessage("event", "log.event.mentorship-program");
 		},
 	}),
 	new Upgrade({
-		name: "People management",
-		description: "Instead of working, make sure others are working.",
+		name: "upgrade.people-management.title",
+		description: "upgrade.people-management.description",
 		type: "research",
 		cost: {
 			food: 6000,
@@ -254,18 +228,14 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.managerUnlocked = true;
 			game.unlock("manager");
-			game.logMessage(
-				"event",
-				"You can now assign chaos controllers! Also known as managers."
-			);
+			game.logMessage("event", "log.event.people-management");
 		},
 	}),
 
 	// Job upgrades
 	new Upgrade({
-		name: "Craft wooden axes",
-		description:
-			"Your lumberjacks will be happy they don't have to use their bare fists anymore.",
+		name: "upgrade.craft-wooden-axes.title",
+		description: "upgrade.craft-wooden-axes.description",
 		type: "craft",
 		cost: {
 			wood: 40,
@@ -275,16 +245,12 @@ Game.prototype.upgradeList = [
 		requirement: ["tent", 1],
 		effect: function (game) {
 			game.production.lumberjack *= 1.75;
-			game.logMessage(
-				"event",
-				"Your lumberjacks are now equipped with wooden axes."
-			);
+			game.logMessage("event", "log.event.craft-wooden-axes");
 		},
 	}),
 	new Upgrade({
-		name: "Craft wooden fishing rods",
-		description:
-			"Flailing your arms about in the water might not have been very effective.",
+		name: "upgrade.craft-wooden-fishing-rods.title",
+		description: "upgrade.craft-wooden-fishing-rods.description",
 		type: "craft",
 		cost: {
 			wood: 100,
@@ -294,16 +260,12 @@ Game.prototype.upgradeList = [
 		requirement: ["pier", 1],
 		effect: function (game) {
 			game.production.fisherman *= 1.75;
-			game.logMessage(
-				"event",
-				"Your fishermen can now sit back and observe the lure. Handy."
-			);
+			game.logMessage("event", "log.event.craft-wooden-fishing-rods");
 		},
 	}),
 	new Upgrade({
-		name: "Craft wooden pickaxes",
-		description:
-			"Not the best idea in the world, but it gets the job done. Somewhat.",
+		name: "upgrade.craft-wooden-pickaxes.title",
+		description: "upgrade.craft-wooden-pickaxes.description",
 		type: "craft",
 		cost: {
 			wood: 120,
@@ -313,15 +275,12 @@ Game.prototype.upgradeList = [
 		requirement: ["quarry", 1],
 		effect: function (game) {
 			game.production.miner *= 1.75;
-			game.logMessage(
-				"event",
-				"Equipped with pickaxes, your miners don't have to settle on scavenging whatever rocks are scattered around the place."
-			);
+			game.logMessage("event", "log.event.craft-wooden-pickaxes");
 		},
 	}),
 	new Upgrade({
-		name: "Craft stone axes",
-		description: "Chop down trees with something tougher than themselves.",
+		name: "upgrade.craft-stone-axes.title",
+		description: "upgrade.craft-stone-axes.description",
 		type: "craft",
 		cost: {
 			wood: 20,
@@ -332,15 +291,12 @@ Game.prototype.upgradeList = [
 		requirement: ["quarry", 1],
 		effect: function (game) {
 			game.production.lumberjack *= 1.75;
-			game.logMessage(
-				"event",
-				"Stone axes are go. Look at all them trees fall!"
-			);
+			game.logMessage("event", "log.event.craft-stone-axes");
 		},
 	}),
 	new Upgrade({
-		name: "Craft stone pickaxes",
-		description: "Breaking rocks with style.",
+		name: "upgrade.craft-stone-pickaxes.title",
+		description: "upgrade.craft-stone-pickaxes.description",
 		type: "craft",
 		cost: {
 			wood: 50,
@@ -351,15 +307,12 @@ Game.prototype.upgradeList = [
 		requirement: ["quarry", 2],
 		effect: function (game) {
 			game.production.miner *= 1.75;
-			game.logMessage(
-				"event",
-				"Your miners are boldly entering the stone age."
-			);
+			game.logMessage("event", "log.event.craft-stone-pickaxes");
 		},
 	}),
 	new Upgrade({
-		name: "Sharpen the pickaxes",
-		description: "Rocks break faster with pointier tools.",
+		name: "upgrade.sharpen-pickaxes.title",
+		description: "upgrade.sharpen-pickaxes.description",
 		type: "craft",
 		cost: {
 			wood: 60,
@@ -370,15 +323,12 @@ Game.prototype.upgradeList = [
 		requirement: ["smithy", 1],
 		effect: function (game) {
 			game.production.miner *= 1.25;
-			game.logMessage(
-				"event",
-				"After a brief period of adjustment, your miners figured out which end of the pickaxe to stick in the rocks."
-			);
+			game.logMessage("event", "log.event.sharpen-pickaxes");
 		},
 	}),
 	new Upgrade({
-		name: "Comfortable stools",
-		description: "Your fishermen are tired of standing around.",
+		name: "upgrade.comfortable-stools.title",
+		description: "upgrade.comfortable-stools.description",
 		type: "craft",
 		cost: {
 			wood: 160,
@@ -389,15 +339,12 @@ Game.prototype.upgradeList = [
 		requirement: ["smithy", 1],
 		effect: function (game) {
 			game.production.fisherman *= 1.25;
-			game.logMessage(
-				"event",
-				"You hear a loud cheer of joy as your fishermen are given hard stone chairs, the best they've ever used."
-			);
+			game.logMessage("event", "log.event.comfortable-stools");
 		},
 	}),
 	new Upgrade({
-		name: "Log storage",
-		description: "Put your wood in standardized boxes.",
+		name: "upgrade.log-storage.title",
+		description: "upgrade.log-storage.description",
 		type: "craft",
 		cost: {
 			wood: 200,
@@ -408,17 +355,12 @@ Game.prototype.upgradeList = [
 		requirement: ["smithy", 2],
 		effect: function (game) {
 			game.production.lumberjack *= 1.25;
-			game.logMessage(
-				"event",
-				`The blacksmith committee has decided on a standard measurement of length -
-				this arbitrary tree is the length of "1 log". Lumberjacks now have an easier time
-				carrying and storing wood.`
-			);
+			game.logMessage("event", "log.event.log-storage");
 		},
 	}),
 	new Upgrade({
-		name: "Multi-level quarry",
-		description: "Expand your quarry vertically.",
+		name: "upgrade.multi-level-quarry.title",
+		description: "upgrade.multi-level-quarry.description",
 		type: "craft",
 		cost: {
 			wood: 400,
@@ -429,15 +371,12 @@ Game.prototype.upgradeList = [
 		requirement: ["smithy", 2],
 		effect: function (game) {
 			game.production.miner *= 1.5;
-			game.logMessage(
-				"event",
-				"A deeper quarry means more stone to mine. Demand for canaries increases."
-			);
+			game.logMessage("event", "log.event.multi-level-quarry");
 		},
 	}),
 	new Upgrade({
-		name: "Fish traps",
-		description: "Construct cunning traps to get fish to catch themselves.",
+		name: "upgrade.fish-traps.title",
+		description: "upgrade.fish-traps.description",
 		type: "craft",
 		cost: {
 			wood: 500,
@@ -447,15 +386,12 @@ Game.prototype.upgradeList = [
 		requirement: ["smithy", 3],
 		effect: function (game) {
 			game.production.fisherman *= 1.5;
-			game.logMessage(
-				"event",
-				"With fish traps, your fishermen are now fishing twice at the same time."
-			);
+			game.logMessage("event", "log.event.fish-traps");
 		},
 	}),
 	new Upgrade({
-		name: "Back supports",
-		description: "Your lumberjacks' backs hurt from all the swinging.",
+		name: "upgrade.back-supports.title",
+		description: "upgrade.back-supports.description",
 		type: "craft",
 		cost: {
 			wood: 300,
@@ -465,17 +401,13 @@ Game.prototype.upgradeList = [
 		once: true,
 		requirement: ["smithy", 3],
 		effect: function (game) {
-			game.production.lumberjack * 1.75;
-			game.logMessage(
-				"event",
-				"Equipped with back supports, your lumberjacks are like tree-cutting machines."
-			);
+			game.production.lumberjack *= 1.75;
+			game.logMessage("event", "log.event.back-supports");
 		},
 	}),
 	new Upgrade({
-		name: "Time management",
-		description:
-			"Help blacksmiths and professors manage their workday more efficiently.",
+		name: "upgrade.time-management.title",
+		description: "upgrade.time-management.description",
 		type: "research",
 		cost: {
 			food: 2000,
@@ -486,16 +418,12 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.production.blacksmith -= 0.05;
 			game.production.professor -= 0.05;
-			game.logMessage(
-				"event",
-				"Writing up a schedule helps your blacksmiths and professors realize how much time they have been wasting."
-			);
+			game.logMessage("event", "log.event.time-management");
 		},
 	}),
 	new Upgrade({
-		name: "Swing smarter, not harder",
-		description:
-			"A lumberjack course for maximizing your results with the same effort.",
+		name: "upgrade.swing-smarter.title",
+		description: "upgrade.swing-smarter.description",
 		type: "research",
 		cost: {
 			food: 600,
@@ -505,15 +433,12 @@ Game.prototype.upgradeList = [
 		requirement: ["academy", 1],
 		effect: function (game) {
 			game.production.lumberjack *= 2;
-			game.logMessage(
-				"event",
-				"Your lumberjacks are a lot better at tree-cutting. They also seem to have formed a union."
-			);
+			game.logMessage("event", "log.event.swing-smarter");
 		},
 	}),
 	new Upgrade({
-		name: "Task mastery",
-		description: "Your mentors are good, but they could be better.",
+		name: "upgrade.task-mastery.title",
+		description: "upgrade.task-mastery.description",
 		type: "research",
 		cost: {
 			food: 3000,
@@ -523,18 +448,14 @@ Game.prototype.upgradeList = [
 		requirement: ["academy", 2],
 		effect: function (game) {
 			game.production.mentorBoost += 0.1;
-			game.logMessage(
-				"event",
-				"After doing the same thing over and over for long enough, your mentors got better at their job."
-			);
+			game.logMessage("event", "log.event.task-mastery");
 		},
 	}),
 
 	// Story upgrades
 	new Upgrade({
-		name: "Survey the monolith",
-		description:
-			"The black shape towers over all. It compels you to examine it.",
+		name: "upgrade.survey-monolith.title",
+		description: "upgrade.survey-monolith.description",
 		type: "craft",
 		cost: {
 			food: 50,
@@ -543,23 +464,15 @@ Game.prototype.upgradeList = [
 		once: true,
 		requirement: ["quarry", 2],
 		effect: function (game) {
-			game.showStory(
-				`You assemble a survey party, and venture out towards the monolith.
-				It takes you a few days just to reach it, a testament to how much
-				larger it is than it appeared to be from a distance. You are lucky
-				you prepared plenty of food. Once you arrive, it is as if reality
-				stops at the structure's border. It has the color of having your eyes
-				closed, which unsettles you deeply, and you try to look away whenever
-				possible. To the touch, its surface is perfectly smooth and cannot be
-				chipped with any tools at your disposal. What is it? Why is it here?
-				The questions remain unanswered, and your party heads back home.`,
-				"Return"
-			);
-		},
+				game.showStory(
+					"story.survey-monolith",
+					"button.story.return"
+				);
+			},
 	}),
 	new Upgrade({
-		name: "Study the monolith",
-		description: "Ask your scholars to examine the distant structure.",
+		name: "upgrade.study-monolith.title",
+		description: "upgrade.study-monolith.description",
 		type: "research",
 		cost: {
 			food: 800,
@@ -568,22 +481,15 @@ Game.prototype.upgradeList = [
 		once: true,
 		requirement: ["academy", 2],
 		effect: function (game) {
-			game.showStory(
-				`You gather the finest minds of your village and venture towards the
-				monolith once again. Their measuring instruments reveal a worrying
-				result. The monolith reads as having the temperature of millions
-				of degrees, despite being pleasantly cool to the touch. All other
-				measurements fail, resulting in either zero or a value far beyond
-				the scale. By all means, this object should not exist in your reality,
-				let alone have the stability to stand there, ruthless and unchanging.
-				Keeping all its energy to itself. How dare it.`,
-				"Leave"
-			);
-		},
+				game.showStory(
+					"story.study-monolith",
+					"button.story.leave"
+				);
+			},
 	}),
 	new Upgrade({
-		name: "Destroy the monolith",
-		description: "It has plagued the horizon long enough.",
+		name: "upgrade.destroy-monolith.title",
+		description: "upgrade.destroy-monolith.description",
 		type: "research",
 		cost: {
 			wood: 10000,
@@ -594,54 +500,32 @@ Game.prototype.upgradeList = [
 		once: true,
 		requirement: ["academy", 4],
 		effect: function (game) {
-			game.showStory(
-				`It's a bright sunny day, and your hand-working villagers wake up and
-				head to their place of work, all the while chanting cheerful song.
-				But, today is a special day, as this evening the deed will be done.
-				As the sun sets, all gather wordlessly and traverse the long narrow
-				pathway to the structure. How fortunate that explosives, originally
-				invented for mining, can now serve the greatest purpose.`,
-				"Advance",
-				() => {
-					game.showStory(
-						`You're closer. Almost there. The horrible, eye-searing display,
-						blocking your vision wherever present, growing larger with decreasing
-						distance. Once at the threshold, the explosives are set. All is quiet.
-						The moment has come. The purpose must be fulfilled. The engineer hands
-						you the trigger. He runs, stumbles, and hits his head, splitting it open.
-						The joy of the moment proved too much to bear. Not all villagers left
-						the explosion area, but there is no time to waste.`,
-						"Trigger",
-						() => {
-							game.showStory(
-								`Shower of particles. Dust rises, then falls. Tendrils made
-								of monolith. They split, merge, charge, rejoin. It is angry.
-								There is damage. We have succeeded. One by one, thrust through
-								the heart. Thank you, Gareth. Goodbye, Kate. I'm so happy.
-								We have done it, together. Tendrils, now coordinated. Grabbing
-								my friends. Pulling them inside, where space stops. It is no
-								matter. We are but a cog in the great plan. Horrible, unbearable
-								pain. I'm so happy. What we started, others will finish. It's
-								taking me now. Infinite blackness. It is damaged, floods out.
-								Other villages will appear. Time stops, there is now only thought.
-								Others will damage further. The great work will be done.
-								The monolith must fall. The monolith must fall.`,
-								"Join",
-								() => {
-									game.gameOver();
-								}
-							);
-						}
-					);
-				}
-			);
-		},
+				game.showStory(
+					"story.destroy-monolith-1",
+					"button.story.advance",
+					() => {
+						game.showStory(
+							"story.destroy-monolith-2",
+							"button.story.trigger",
+							() => {
+								game.showStory(
+									"story.destroy-monolith-3",
+									"button.story.join",
+									() => {
+										game.gameOver();
+									}
+								);
+							}
+						);
+					}
+				);
+			},
 	}),
 
 	// Random upgrades
 	new Upgrade({
-		name: "Hunt down local wildlife",
-		description: "Catch the local fluffy bunny population for some food.",
+		name: "upgrade.hunt-wildlife.title",
+		description: "upgrade.hunt-wildlife.description",
 		type: "craft",
 		cost: {
 			wood: 5,
@@ -652,16 +536,12 @@ Game.prototype.upgradeList = [
 		requirement: ["tent", 1],
 		effect: function (game) {
 			game.food += 40;
-			game.logMessage(
-				"event",
-				"You eradicated all bunnies. The ecosystem might recover someday."
-			);
-		},
+			game.logMessage("event", "log.event.hunt-wildlife");
+			},
 	}),
 	new Upgrade({
-		name: "Fell a great oak",
-		description:
-			"Chop down the largest tree you can find to boost your supplies.",
+		name: "upgrade.fell-oak.title",
+		description: "upgrade.fell-oak.description",
 		type: "craft",
 		cost: {
 			wood: 20,
@@ -671,16 +551,12 @@ Game.prototype.upgradeList = [
 		requirement: ["pier", 1],
 		effect: function (game) {
 			game.wood += 100;
-			game.logMessage(
-				"event",
-				"A majestic oak, providing shade and solace to warriors and lovers alike, is the latest victim of your expansion."
-			);
+			game.logMessage("event", "log.event.fell-oak");
 		},
 	}),
 	new Upgrade({
-		name: "Level the ground",
-		description:
-			"The village is built on rather uneven ground. Maybe our miners can help with that.",
+		name: "upgrade.level-ground.title",
+		description: "upgrade.level-ground.description",
 		type: "craft",
 		cost: {
 			stone: 20,
@@ -690,16 +566,12 @@ Game.prototype.upgradeList = [
 		requirement: ["quarry", 1],
 		effect: function (game) {
 			game.stone += 120;
-			game.logMessage(
-				"event",
-				"The village is now flatter than ever! Alright guys, you can carry the buildings back in."
-			);
+			game.logMessage("event", "log.event.level-ground");
 		},
 	}),
 	new Upgrade({
-		name: "Fish out the monster of the deep",
-		description:
-			"A fish of enormous proportions has been terrorizing the population.",
+		name: "upgrade.fish-monster.title",
+		description: "upgrade.fish-monster.description",
 		type: "craft",
 		cost: {
 			food: 40,
@@ -709,16 +581,12 @@ Game.prototype.upgradeList = [
 		requirement: ["quarry", 2],
 		effect: function (game) {
 			game.food += 200;
-			game.logMessage(
-				"event",
-				"The monster of the deep has been put to rest. The waters are safe once more. It also happened to be quite delicious."
-			);
+			game.logMessage("event", "log.event.fish-monster");
 		},
 	}),
 	new Upgrade({
-		name: "Exploration basics",
-		description:
-			"Teach your villagers how to survive in the wild in their free time. Maybe they'll find something?",
+		name: "upgrade.exploration-basics.title",
+		description: "upgrade.exploration-basics.description",
 		type: "research",
 		cost: {
 			wood: 50,
@@ -731,16 +599,12 @@ Game.prototype.upgradeList = [
 		effect: function (game) {
 			game.wood += 1000;
 			game.stone += 1000;
-			game.logMessage(
-				"event",
-				"Your villagers went on an adventure last weekend. They found an abandoned camp, full of supplies! All the food was rotten, though."
-			);
+			game.logMessage("event", "log.event.exploration-basics");
 		},
 	}),
 	new Upgrade({
-		name: "Foreign customs",
-		description:
-			"Learn how to communicate with a friendly tribe minding their business nearby.",
+		name: "upgrade.foreign-customs.title",
+		description: "upgrade.foreign-customs.description",
 		type: "research",
 		cost: {
 			food: 400,
@@ -752,10 +616,7 @@ Game.prototype.upgradeList = [
 			game.wood += 1600;
 			game.stone += 1600;
 			game.food += 800;
-			game.logMessage(
-				"event",
-				"The friendly tribe agreed to barter! They happily accepted a bunch of random trinkets, and offered tons of supplies in return."
-			);
+			game.logMessage("event", "log.event.foreign-customs");
 		},
 	}),
 ];

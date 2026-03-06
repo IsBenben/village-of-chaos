@@ -1,10 +1,22 @@
 {
-	"name": "Village of Chaos",
+	"name": "Village of Chaos - 混乱村庄",
 	"short_name": "Village of Chaos",
+	"description": "《混乱村庄》（Village of Chaos）游戏是一个简短的文字放置游戏，在这个游戏中，你将会收集资源，邀请村民并建造新建筑，感受独特的游戏体验。免费在线游玩，支持多语言。",
 	"start_url": ".",
 	"display": "standalone",
 	"background_color": "#768c38",
-	"description": "A short idle game about management.",
+	"theme_color": "#768c38",
+	"orientation": "any",
+	"scope": ".",
+	"lang": "zh-CN",
+	"dir": "ltr",
+	"categories": [
+		"games",
+		"entertainment",
+		"incremental",
+		"idle",
+		"strategy"
+	],
 	"icons": [
 		{
 			"src": "android-chrome-192x192.png",
@@ -17,5 +29,14 @@
 			"type": "image/png"
 		}
 	],
-	"theme_color": "#768c38"
+	"screenshots": [
+		{
+			"src": "doc/mockup.png",
+			"sizes": "1200x800",
+			"type": "image/png",
+			"label": "游戏界面预览"
+		}
+	],
+	"related_applications": [],
+	"prefer_related_applications": false
 }
