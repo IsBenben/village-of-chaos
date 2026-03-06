@@ -734,13 +734,16 @@ header > button {
 
 /* Setting expand button content in :after avoids needing JS to do it */
 
-#log-expand:after {
+#log-expand .invisible-text {
 	font-size: 0.8rem;
-	content: "log +";
 }
 
-#log.visible > #log-expand:after {
-	content: "log -";
+#log.visible > #log-expand .invisible-text {
+	font-size: unset;
+}
+
+#log.visible > #log-expand .visible-text {
+	font-size: 0.8rem;
 }
 
 /* Because of different layouts, we need separate breakpoints for portrait and landscape */
@@ -920,6 +923,93 @@ header > button {
 
 	#story-shroud > button {
 		font-size: large;
+	}
+}
+
+/* #endregion */
+
+/* #region Language selection pop-up */
+
+#language-shroud {
+	display: none; /* Controlled by JS */
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	user-select: none;
+	z-index: 3000;
+}
+
+#language-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	text-align: center;
+	border: var(--secondary-color) solid 4px;
+	border-radius: 8px;
+	padding: 1rem;
+	background-color: white;
+	user-select: text;
+	min-width: 16rem;
+}
+
+#language-popup > h2 {
+	margin-bottom: 1rem;
+}
+
+#language-options {
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.language-option {
+	width: 100%;
+	padding: 0.6rem 0.8rem;
+	margin: 0.2rem 0;
+	background-color: var(--active-color);
+	border: 1px solid black;
+	border-radius: 2px;
+	cursor: pointer;
+	font-family: "Alegreya", serif;
+	font-size: 1rem;
+}
+
+.language-option:hover {
+	filter: brightness(80%);
+}
+
+.language-option:active {
+	filter: brightness(120%);
+}
+
+.language-option.active {
+	box-shadow: 0 0 0 2px var(--secondary-color);
+}
+
+#language-dismiss {
+	width: fit-content;
+}
+
+@media (max-width: 560px) {
+	#language-popup {
+		min-width: 12rem;
+		padding: 0.8rem;
+	}
+
+	#language-popup > h2 {
+		font-size: large;
+		margin-bottom: 0.8rem;
+	}
+
+	.language-option {
+		padding: 0.5rem 0.6rem;
+		font-size: 0.9rem;
 	}
 }
 

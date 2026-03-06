@@ -179,23 +179,13 @@ class Game {
 		if (!this.load()) {
 			// No savefile - this is a new game, print out some flavor text
 			this.showStory(
-				`It's a bright sunny day, and you are standing in the middle of a
-				forest clearing. To your left is a glistening river full of fish,
-				and the nearby mountain promises to provide bountiful building
-				material. What attracted you to this place? Was it the prospect
-				of escaping the hustle of city life? Or maybe you were curious
-				about the giant black structure in the distance? Regardless of
-				your reasons, you disembark. It's time to begin your work on
-				the settlement.`,
-				"Begin"
+				"story.intro",
+				"button.story.begin"
 			);
-			this.logMessage("info", "Welcome to Village of Chaos!");
+			this.logMessage("info", 'log.info.welcome');
 			this.showPopup(
 				// Defined in tutorial.js
-				`Welcome to Village of Chaos! In this game you will collect
-				resources, invite villagers and build new structures. To start
-				with, use these buttons to collect 10 units of food and wood,
-				allowing you to build a tent for your first villagers.`,
+				"tutorial.welcome",
 				"#gathering"
 			);
 		}
@@ -424,23 +414,23 @@ class Game {
 		el.classList.add("upgrade");
 
 		let html = "";
-		html += `<h2>${this.upgradeList[upgradeIdx].name}</h2>`;
-		html += `<p class="description">${this.upgradeList[upgradeIdx].description}</p>`;
-		html += `<p>Cost: `;
+		html += `<h2>${tr(this.upgradeList[upgradeIdx].name)}</h2>`;
+		html += `<p class="description">${tr(this.upgradeList[upgradeIdx].description)}</p>`;
+		html += `<p>${tr('text.upgrade.cost')}`;
 		const cost = this.getUpgradeCost(upgradeIdx);
 		let atLeastOne = false;
 		if (cost.wood) {
-			html += `<span class="cost-wood"><span class="cost">${cost.wood}</span> wood</span>`;
+			html += `<span class="cost-wood"><span class="cost">${cost.wood}</span>${tr('resource.wood.suffix')}</span>`;
 			atLeastOne = true;
 		}
 		if (cost.food) {
-			if (atLeastOne) html += `, `;
-			html += `<span class="cost-food"><span class="cost">${cost.food}</span> food</span>`;
+			if (atLeastOne) html += tr('text.symbol.comma');
+			html += `<span class="cost-food"><span class="cost">${cost.food}</span>${tr('resource.food.suffix')}</span>`;
 			atLeastOne = true;
 		}
 		if (cost.stone) {
-			if (atLeastOne) html += `, `;
-			html += `<span class="cost-stone"><span class="cost">${cost.stone}</span> stone</span>`;
+			if (atLeastOne) html += tr('text.symbol.comma');
+			html += `<span class="cost-stone"><span class="cost">${cost.stone}</span>${tr('resource.stone.suffix')}</span>`;
 		}
 		html += `</p>`;
 		el.innerHTML = html;
@@ -614,7 +604,7 @@ class Game {
 	// msg: string, the message to add
 	logMessage(type, msg) {
 		let el = document.createElement("p");
-		el.textContent = msg;
+		el.innerHTML = tr(msg);
 		el.classList.add(type);
 		this.dom.messageArea.prepend(el); // Prepend instead of append because of reverse flexbox direction
 	}
@@ -625,8 +615,8 @@ class Game {
 	// callback (optional): function to run once the dismiss button is pressed
 	showStory(message, buttonText, callback) {
 		this.dom.storyShroud.style.display = "flex";
-		this.dom.storyText.textContent = message;
-		this.dom.storyDismiss.textContent = buttonText;
+		this.dom.storyText.innerHTML = tr(message);
+		this.dom.storyDismiss.innerHTML = tr(buttonText);
 		if (callback) this.dom.storyDismiss.addEventListener("click", callback);
 	}
 
@@ -636,7 +626,7 @@ class Game {
 		for (let field of this.serializable) state[field] = this[field];
 		localStorage.setItem("savegame", JSON.stringify(state));
 
-		this.logMessage("info", "Game saved.");
+		this.logMessage("info", "log.info.game-saved");
 	}
 
 	// Load the game state from cookies
@@ -655,7 +645,7 @@ class Game {
 		this.dom.popupDismiss.click();
 
 		this.dom.messageArea.replaceChildren(); // We don't restore log entries
-		this.logMessage("info", "Game loaded.");
+		this.logMessage("info", "log.info.game-loaded");
 		return true;
 	}
 
@@ -667,7 +657,8 @@ class Game {
 
 	// Apocalypse
 	gameOver() {
-		document.write("== END TRANSMISSION");
+		// document.write("== END TRANSMISSION");
+		document.querySelector('html').innerHTML = '<t-i18n k="text.end-transmission"></t-i18n>';
 	}
 
 	// Instantly get enough resources to beat the game
