@@ -179,23 +179,13 @@ class Game {
 		if (!this.load()) {
 			// No savefile - this is a new game, print out some flavor text
 			this.showStory(
-				`It's a bright sunny day, and you are standing in the middle of a
-				forest clearing. To your left is a glistening river full of fish,
-				and the nearby mountain promises to provide bountiful building
-				material. What attracted you to this place? Was it the prospect
-				of escaping the hustle of city life? Or maybe you were curious
-				about the giant black structure in the distance? Regardless of
-				your reasons, you disembark. It's time to begin your work on
-				the settlement.`,
-				"Begin"
+				"story.intro",
+				"button.story.begin"
 			);
 			this.logMessage("info", 'log.info.welcome');
 			this.showPopup(
 				// Defined in tutorial.js
-				`Welcome to Village of Chaos! In this game you will collect
-				resources, invite villagers and build new structures. To start
-				with, use these buttons to collect 10 units of food and wood,
-				allowing you to build a tent for your first villagers.`,
+				"tutorial.welcome",
 				"#gathering"
 			);
 		}
@@ -614,7 +604,7 @@ class Game {
 	// msg: string, the message to add
 	logMessage(type, msg) {
 		let el = document.createElement("p");
-		el.innerHTML = `<t-i18n k="${msg}"></t-i18n>`;
+		el.innerHTML = tr(msg);
 		el.classList.add(type);
 		this.dom.messageArea.prepend(el); // Prepend instead of append because of reverse flexbox direction
 	}
@@ -625,8 +615,8 @@ class Game {
 	// callback (optional): function to run once the dismiss button is pressed
 	showStory(message, buttonText, callback) {
 		this.dom.storyShroud.style.display = "flex";
-		this.dom.storyText.textContent = message;
-		this.dom.storyDismiss.textContent = buttonText;
+		this.dom.storyText.innerHTML = tr(message);
+		this.dom.storyDismiss.innerHTML = tr(buttonText);
 		if (callback) this.dom.storyDismiss.addEventListener("click", callback);
 	}
 
@@ -668,7 +658,7 @@ class Game {
 	// Apocalypse
 	gameOver() {
 		// document.write("== END TRANSMISSION");
-		document.innerHTML = '<t-i18n k="text.end-transmission"></t-i18n>';
+		document.querySelector('html').innerHTML = '<t-i18n k="text.end-transmission"></t-i18n>';
 	}
 
 	// Instantly get enough resources to beat the game

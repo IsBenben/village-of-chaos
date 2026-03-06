@@ -109,7 +109,7 @@ Game.prototype.updatePopups = function () {
 Game.prototype.showPopup = function (text, atSelector, switchTab) {
 	setTimeout(() => {
 		this.dom.popupShroud.style.display = "block";
-		this.dom.popupText.innerHTML = `<t-i18n k="${text}"></t-i18n>`;
+		this.dom.popupText.innerHTML = tr(text);
 
 		// Switch the tab first in case it contains the atSelector element
 		if (switchTab) this.dom[switchTab + "Button"].click();
