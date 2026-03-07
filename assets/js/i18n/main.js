@@ -2,6 +2,8 @@ const languages = {
 	en_us,
 	zh_cn,
 	zh_hant,
+	fr_fr,
+	es_es,
 };
 
 let currentLanguage = "en_us";
@@ -52,6 +54,7 @@ customElements.define("t-i18n", TI18nElement);
 
 const changeLanguage = (language) => {
 	currentLanguage = language;
+	localStorage.setItem("language", language);
 	document.documentElement.lang = languages[language]["meta.language"];
 	tI18nElements.forEach((element) => {
 		if (element.connected) {
@@ -64,23 +67,33 @@ const changeLanguage = (language) => {
 	}
 };
 
-for (const language of navigator.languages) {
-	const languageLowercase = language.toLowerCase();
-	if (languageLowercase.startsWith("en")) {
-		changeLanguage("en_us");
-		break;
-	} else if (languageLowercase.startsWith("zh")) {
-		if (
-			languageLowercase.includes("tw") ||
-			languageLowercase.includes("hk") ||
-			languageLowercase.includes("mo") ||
-			languageLowercase.includes("hant")
-		) {
-			changeLanguage("zh_hant");
-		} else {
-			changeLanguage("zh_cn");
+if (Object.keys(languages).includes(localStorage.getItem("language"))) {
+	changeLanguage(localStorage.getItem("language"));
+} else {
+	for (const language of navigator.languages) {
+		const languageLowercase = language.toLowerCase();
+		if (languageLowercase.startsWith("en")) {
+			changeLanguage("en_us");
+			break;
+		} else if (languageLowercase.startsWith("zh")) {
+			if (
+				languageLowercase.includes("tw") ||
+				languageLowercase.includes("hk") ||
+				languageLowercase.includes("mo") ||
+				languageLowercase.includes("hant")
+			) {
+				changeLanguage("zh_hant");
+			} else {
+				changeLanguage("zh_cn");
+			}
+			break;
+		} else if (languageLowercase.startsWith("fr")) {
+			changeLanguage("fr_fr");
+			break;
+		} else if (languageLowercase.startsWith("es")) {
+			changeLanguage("es_es");
+			break;
 		}
-		break;
 	}
 }
 

@@ -6,6 +6,7 @@ const zh_cn = {
 	"text.ver": "ver. 1.0",
 	"text.symbol.comma": "，",
 	"text.end-transmission": "== 结束传输",
+	"text.language-warning": "语言翻译可能不是100%准确，请自行承担使用风险",
 
 	"button.gather-wood": "采集木材",
 	"button.gather-food": "采集食物",
@@ -79,7 +80,7 @@ const zh_cn = {
 	"upgrade.craft-wooden-pickaxes.description": "虽然不是世界上最好的主意，但能完成任务。某种程度上。",
 	"log.event.craft-wooden-pickaxes": "装备了镐，你的矿工不必再局限于收集散布在场地周围的岩石了。",
 	"upgrade.craft-stone-axes.title": "制造石斧",
-	"upgrade.craft-stone-axes.description": "花式破坏岩石。",
+	"upgrade.craft-stone-axes.description": "花式破坏树木。",
 	"log.event.craft-stone-axes": "石斧到，树木倒！",
 	"upgrade.craft-stone-pickaxes.title": "制造石镐",
 	"upgrade.craft-stone-pickaxes.description": "用镐挖掘岩石比把它们刮擦在一起高效得多。",

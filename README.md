@@ -4,7 +4,7 @@
 
 _Village of Chaos_ is an incremental game written in vanilla Javascript, made for [Code Institute](https://codeinstitute.net)'s 2nd submission project. The goal of the game is to build a village, bit by bit, and manage your villagers' jobs to maximize their potential.
 
-[Live version is available here.](https://tearnote.github.io/village-of-chaos/)
+[Live version is available here.](https://isbenben.github.io/village-of-chaos/)
 
 ## Important notes
 
@@ -89,7 +89,7 @@ The compatibility goal was all commonly used desktop and mobile browsers, update
 
 The game is served as a fully static website (no server component.) For this reason, it can be trivially deployed to any file hosting service that allows hotlinking to images, stylesheets and scripts. All asset references are relative, so the game will work in a subdirectory. A 404 page is not included, as this project has no links of any kind, internal or external.
 
-For the purpose of this project, the [live version](https://tearnote.github.io/village-of-chaos/) is deployed via GitHub Pages via this process:
+For the purpose of this project, the [live version](https://isbenben.github.io/village-of-chaos/) is deployed via GitHub Pages via this process:
 
 -   Click on the Settings tab and scroll down to the GitHub Pages section,
 -   Select the main branch source and click on the Save button.
@@ -97,7 +97,7 @@ For the purpose of this project, the [live version](https://tearnote.github.io/v
 The project can be cloned locally with the following command:
 
 ```
-git clone https://github.com/Tearnote/village-of-chaos.git
+git clone https://github.com/IsBenben/village-of-chaos.git
 ```
 
 The local version can be ran straight from the filesystem by simply opening the `index.html` file in the browser, as it has no server dependencies.
