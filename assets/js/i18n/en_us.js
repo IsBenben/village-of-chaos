@@ -6,6 +6,7 @@ const en_us = {
 	"text.ver": "ver. 1.0",
 	"text.symbol.comma": ", ",
 	"text.end-transmission": "== END TRANSMISSION",
+	"text.language-warning": "Language translation may not be 100% accurate, please use at your own risk",
 
 	"button.gather-wood": "Gather wood",
 	"button.gather-food": "Gather food",

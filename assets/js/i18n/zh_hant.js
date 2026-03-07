@@ -6,12 +6,13 @@ const zh_hant = {
 	"text.ver": "ver. 1.0",
 	"text.symbol.comma": "，",
 	"text.end-transmission": "== 結束傳輸",
+	"text.language-warning": "語言翻譯可能不是100%準確，請自行承擔使用風險",
 
 	"button.gather-wood": "採集木材",
 	"button.gather-food": "採集食物",
 	"button.language": "語言",
 	"button.save": "保存",
-	"button.load": "載入",
+	"button.load": "加載",
 	"button.reset": "重置",
 	"button.expand-log": "日誌 +",
 	"button.collapse-log": "日誌 -",
@@ -34,17 +35,17 @@ const zh_hant = {
 
 	"text.upgrade.cost": "消耗：",
 	"upgrade.build-tent.title": "建立營帳",
-	"upgrade.build-tent.description": "可容納兩隻村民。",
-	"log.event.build-tent": "兩個村民加入了你的定居點。",
+	"upgrade.build-tent.description": "可容納兩位村民。",
+	"log.event.build-tent": "兩位村民加入了你的定居點。",
 	"upgrade.expand-tent.title": "擴建營帳",
-	"upgrade.expand-tent.description": "添加另一張床來容納一隻額外的村民。",
-	"log.event.expand-tent": "一個額外的村民加入了你的定居點。",
+	"upgrade.expand-tent.description": "添加另一張床來容納一位額外的村民。",
+	"log.event.expand-tent": "額外的一位村民加入了你的定居點。",
 	"upgrade.build-pier.title": "建造碼頭",
 	"upgrade.build-pier.description": "為你的村民建造一個碼頭。",
 	"log.event.build-pier": "你建造了碼頭，現在可以分配漁夫了。",
-	"upgrade.extend-pier.title": "延伸碼頭",
-	"upgrade.extend-pier.description": "更長的碼頭可以捕獲更大的魚。",
-	"log.event.extend-pier": "你的漁夫現在可以捕獲更大的魚了。",
+	"upgrade.extend-pier.title": "擴展碼頭",
+	"upgrade.extend-pier.description": "更長的碼頭可以捕捉到更大的魚。",
+	"log.event.extend-pier": "你的漁夫現在可以捕捉到更大的魚了。",
 	"upgrade.build-quarry.title": "建造採石場",
 	"upgrade.build-quarry.description": "掘進山腰來開採石頭。",
 	"log.event.build-quarry": "你建造了採石場，現在可以分配礦工了。",
@@ -63,36 +64,36 @@ const zh_hant = {
 	"upgrade.grow-academy.title": "擴建學院",
 	"upgrade.grow-academy.description": "在新領域推進你的知識。",
 	"log.event.grow-academy": "你擴展了對世界的理解。",
-	"upgrade.mentorship-program.title": "導師計畫",
-	"upgrade.mentorship-program.description": "如果讓一個人指導另一個人會怎樣？",
-	"log.event.mentorship-program": "事實證明，導師訓練新手是一個相當不錯的主意！",
+	"upgrade.mentorship-program.title": "導師計劃",
+	"upgrade.mentorship-program.description": "如果讓一位村民指導另一位村民會怎樣？",
+	"log.event.mentorship-program": "答案是，導師訓練新手是一個相當不錯的主意！",
 	"upgrade.people-management.title": "人員管理",
-	"upgrade.people-management.description": "不親自工作，而是確保其他村民正在工作。",
-	"log.event.people-management": "你現在可以分配混亂控制者！也就是經理。",
+	"upgrade.people-management.description": "不親自工作，而確保其他村民正在工作。",
+	"log.event.people-management": "你現在可以分配「混亂控制者」！也就是經理。",
 	"upgrade.craft-wooden-axes.title": "製造木斧",
-	"upgrade.craft-wooden-axes.description": "你的伐木工人會很高興他們不再需要用拳頭了。",
+	"upgrade.craft-wooden-axes.description": "你的伐木工人很高興，他們不再需要用他們的拳頭了。",
 	"log.event.craft-wooden-axes": "你的伐木工人現在裝備了木斧。",
 	"upgrade.craft-wooden-fishing-rods.title": "製造木釣竿",
-	"upgrade.craft-wooden-fishing-rods.description": "在水中揮舞手臂可能不是很有效。",
+	"upgrade.craft-wooden-fishing-rods.description": "在水中揮舞手臂可能不是很高效。",
 	"log.event.craft-wooden-fishing-rods": "你的漁夫現在可以坐著觀察魚餌了。真方便。",
 	"upgrade.craft-wooden-pickaxes.title": "製造木鎬",
-	"upgrade.craft-wooden-pickaxes.description": "雖然不是世界上最好的主意，但能完成任務。某種程度上吧。",
-	"log.event.craft-wooden-pickaxes": "裝備了鎬，你的礦工不必再局限於收集散布在場地周圍的岩石了。",
+	"upgrade.craft-wooden-pickaxes.description": "雖然不是世界上最好的主意，但能完成任務。某種程度上。",
+	"log.event.craft-wooden-pickaxes": "裝備了鎬，你的礦工不必再局限於收集散佈在場地周圍的岩石了。",
 	"upgrade.craft-stone-axes.title": "製造石斧",
-	"upgrade.craft-stone-axes.description": "有風格地破壞岩石。",
-	"log.event.craft-stone-axes": "石斧到手，樹木倒下！",
+	"upgrade.craft-stone-axes.description": "花式破壞樹木。",
+	"log.event.craft-stone-axes": "石斧到，樹木倒！",
 	"upgrade.craft-stone-pickaxes.title": "製造石鎬",
 	"upgrade.craft-stone-pickaxes.description": "用鎬挖掘岩石比把它們刮擦在一起高效得多。",
 	"log.event.craft-stone-pickaxes": "你的礦工大膽地進入了石器時代。",
 	"upgrade.sharpen-pickaxes.title": "磨快鎬子",
-	"upgrade.sharpen-pickaxes.description": "更尖的工具能更快地破碎岩石。",
-	"log.event.sharpen-pickaxes": "經過短暫的適應期，你的礦工明白了應該用鎬的哪一頭戳在岩石裡。",
-	"upgrade.comfortable-stools.title": "舒適的凳子",
+	"upgrade.sharpen-pickaxes.description": "更尖的工具能更快地破壞岩石。",
+	"log.event.sharpen-pickaxes": "在短暫的適應過後，你的礦工明白了應該用鎬子的哪一頭戳在岩石裡。",
+	"upgrade.comfortable-stools.title": "舒適的石凳",
 	"upgrade.comfortable-stools.description": "你的漁夫厭倦了站著。",
 	"log.event.comfortable-stools": "當你的漁夫得到硬石凳子（他們用過的最好的凳子）時，你聽到了你的漁夫喜悅的大聲歡呼。",
-	"upgrade.log-storage.title": "原木儲存",
-	"upgrade.log-storage.description": "將你的木材放入標準化箱子裡。",
-	"log.event.log-storage": `鐵匠委員會決定採用標準長度單位——這棵隨機的樹的長度為"1根原木"。伐木工人現在更容易搬運和儲存木材了。`,
+	"upgrade.log-storage.title": "原木存儲",
+	"upgrade.log-storage.description": "將你的木材放入標準化的箱子裡。",
+	"log.event.log-storage": `鐵匠委員會決定在採用標準長度單位——這顆隨機的樹作為「1原木」的長度。伐木工人現在更容易搬運和儲存木材了。`,
 	"upgrade.multi-level-quarry.title": "多層採石場",
 	"upgrade.multi-level-quarry.description": "垂直擴展你的採石場。",
 	"log.event.multi-level-quarry": "更深的採石場意味著有更多石頭可以開採。對金絲雀的需求增加了。",
@@ -105,7 +106,7 @@ const zh_hant = {
 	"upgrade.time-management.title": "時間管理",
 	"upgrade.time-management.description": "幫助鐵匠和教授更有效地管理他們的工作時間。",
 	"log.event.time-management": "制定時間表幫助你的鐵匠和教授意識到他們浪費了多少時間。",
-	"upgrade.swing-smarter.title": "更聰明地揮舞，不過度用力",
+	"upgrade.swing-smarter.title": "揮舞更聰明，不過度用力",
 	"upgrade.swing-smarter.description": "伐木工人課程：用同樣的努力最大化你的結果。",
 	"log.event.swing-smarter": "你的伐木工人更擅長砍樹了。他們似乎還組建了工會。",
 	"upgrade.task-mastery.title": "任務精通",
@@ -125,7 +126,7 @@ const zh_hant = {
 	"log.event.fell-oak": "一棵雄偉的橡樹，為戰士和戀人提供蔭涼和慰藉，是你擴張的最新受害者。",
 	"upgrade.level-ground.title": "平整地面",
 	"upgrade.level-ground.description": "村莊建在相當不平的地面上。也許我們的礦工可以幫助解決這個問題。",
-	"log.event.level-ground": "村莊現在比以往任何時候都更平坦！好了，夥伴們，你們可以把建築物搬回來了。",
+	"log.event.level-ground": "村莊現在比以往任何時候都更平坦！好了，夥計們，你們可以把建築物搬回來了。",
 	"upgrade.fish-monster.title": "釣出深海怪物",
 	"upgrade.fish-monster.description": "一條巨大比例的魚一直在恐嚇民眾。",
 	"log.event.fish-monster": "深海怪物已經安息了。水域再次安全了。它恰好也很美味。",
@@ -137,14 +138,14 @@ const zh_hant = {
 	"log.event.foreign-customs": "友好的部落同意以物易物！他們高興地接受了一堆隨機的小飾品，並提供了大量補給作為回報。",
 
 	"tutorial.welcome": `歡迎來到混亂村莊！在這個遊戲中，你將會收集資源，邀請村民並建造新建築。要開始，使用這些按鈕來收集10個單位木材和食物，允許你為了你的首批村民來建造一個營帳。`,
-	"tutorial.resource": "你的當前資源數量顯示在這裡。",
-	"tutorial.tent": `不錯！你現在有足夠的資源來建造你的第一個營帳。這將邀請兩隻村民來到你的村莊。他們將自動被僱用為伐木工人，持續為你生產木材。點擊升級列表中的"建立營帳"來開始製造。`,
-	"tutorial.assign": `現在你會在新解鎖的"分配"標籤頁下發現，你有了一個營帳，你的村莊裡有了兩個伐木工人。點擊"製造"標籤頁來回到可用升級的列表。如果你能完成"建造碼頭"的任務，就讓我們回來看看。當然這一路上你也可以放心進行其他有用的製造。`,
-	"tutorial.pier": `隨著碼頭的建成，你現在可以將你的一些村民分配為漁夫，持續生產食物。使用"+"和"-"按鈕來改變你的分配。任何未分配的村民仍會為你採集木材。`,
-	"tutorial.chaos": `啊哦，隨著兩個村民都來看管碼頭，他們看起來容易互相絆腳。你在同一份工作分配的村民越多，他們的工作場所就會越來越混亂，生產速度也會變慢。你可以在"混亂度"列看到減速因子。嘗試最小化此值來最大化利用你的村莊。`,
+	"tutorial.resource": "當前資源數量顯示在這裡。",
+	"tutorial.tent": `不錯！你現在有足夠的資源來建造你的第一個營帳。這將邀請兩位村民來到你的村莊。他們將自動被僱用為伐木工人，持續為你生產木材。點擊升級列表中的「建立營帳」來開始製造。`,
+	"tutorial.assign": `現在你會在新解鎖的「分配」標籤頁下發現，你有了一個營帳，你的村莊裡有了兩個伐木工人。點擊「製造」標籤頁來回到可用升級的列表。如果你能完成「建造碼頭」的任務，就讓我們回來看看。當然這一路上你也可以放心進行其他有用的製造。`,
+	"tutorial.pier": `隨著碼頭的建成，你現在可以將你的一些村民分配為漁夫，持續生產食物。使用「+」和「-」按鈕來改變你的分配。任何未分配的村民仍會為你採集木材。`,
+	"tutorial.chaos": `啊哦，隨著兩個村民都來看管碼頭，他們看起來容易互相絆腳。你在同一份工作分配的村民越多，他們的工作場所就會越來越混亂，生產速度也會變慢。你可以在「混亂度」列看到慢速因子。嘗試最小化此值來最大化利用你的村莊。`,
 	"tutorial.stone": `隨著採石場的建造，你解鎖了一種全新類型的資源！分配礦工開始採集石頭。如果你升級現有建築，你可能還會發現新的製造……`,
 	"tutorial.smithy": `你有沒有注意到製造需要越來越長的時間來完成？分配鐵匠來幫助你製造，顯著加快製造速度。加速因子顯示在你的資源數量旁邊。`,
-	"tutorial.academy": `村莊學院現在矗立著！一種全新類型的升級已經解鎖——研究，你可以通過新的"研究"標籤頁訪問。你現在還可以分配加快研究進度的教授，類似於鐵匠如何加快製造速度。`,
+	"tutorial.academy": `村莊學院現在矗立著！一種全新類型的升級已經解鎖——研究，你可以通過新的「研究」標籤頁訪問。你現在還可以分配加快研究進度的教授，類似於鐵匠如何加快製造速度。`,
 	"tutorial.mentor": `恭喜，你現在可以為每個工作分配導師了！導師不僅在生產方面比普通村民更出色，他們還可以收一名村民作為學徒。每對導師和村民在計算混亂度時只算作一個人，幫助你建立更大的工作場所而不招致混亂。`,
 	"tutorial.manager": `這就是——團隊管理的最高境界。有了團隊中的經理，你的產量將達到前所未有的水平！當然，經理實際上不生產任何東西，但你擁有的經理越多，你的混亂度就越低。天高任鳥飛！很快，也許你就能夠對地平線上的那座巨石做些什麼了……`,
 
@@ -154,13 +155,13 @@ const zh_hant = {
 	"production.craft.multiplier": "製造：",
 	"production.research.multiplier": "研究：",
 
-	"log.info.game-loaded": "遊戲已載入。",
+	"log.info.game-loaded": "遊戲已加載。",
 	"log.info.welcome": "歡迎來到混亂村莊！",
 	"log.info.game-saved": "遊戲已保存。",
 
 	"job.chaos": "混亂度",
 	"job.lv": "等級",
-	"job.chopping-villagers": "名村民正在砍樹",
+	"job.chopping-villagers": "位村民正在砍樹",
 	"job.villagers": "村民：",
 	"job.mentors": "導師：",
 	"job.managers": "經理：",
@@ -170,52 +171,10 @@ const zh_hant = {
 	"job.smithy": "鐵匠鋪",
 	"job.academy": "學院",
 
-	"story.intro": `這是一個陽光明媚的日子，你站在森林空地的中央。
-		你的左邊是一條閃閃發光的河流，裡面滿是魚，
-		附近的山脈有望提供豐富的建築材料。
-		是什麼吸引了你來到這個地方？是逃離城市喧囂的
-		可能性嗎？還是你對遠處那座巨大的黑色結構
-		感到好奇？無論你的原因是什麼，你上岸了。
-		是時候開始你在定居點的工作了。`,
-	"story.survey-monolith": `你組織了一個調查隊，向巨石進發。
-		僅僅到達它就花了幾天時間，這證明了它比從遠處
-		看起來要大得多。你很幸運準備了足夠的食物。
-		一旦到達，就好像現實在結構的邊界處停止了。
-		它有著閉上眼睛時的顏色，這讓你深感不安，
-		你盡量不看它。觸摸時，它的表面完全光滑，
-		無法用你手頭的任何工具鑿開。它是什麼？
-		它為什麼在這裡？問題仍然沒有答案，你的隊伍回家了。`,
-	"story.study-monolith": `你召集了村莊裡最優秀的人才，再次向巨石進發。
-		他們的測量儀器揭示了一個令人擔憂的結果。
-		巨石顯示有數百萬度的溫度，儘管觸摸起來
-		令人愉快地涼爽。所有其他測量都失敗了，
-		結果要麼是零，要麼是遠遠超出量程的值。
-		無論如何，這個物體不應該存在於你的現實中，
-		更不用說有穩定性地站在那裡，冷酷而不變。
-		將所有能量保留給自己。它怎麼敢。`,
-	"story.destroy-monolith-1": `這是一個陽光明媚的日子，你勤勞的村民醒來
-		前往他們的工作場所，一路上唱著歡快的歌曲。
-		但是，今天是特殊的一天，因為今晚這項任務將完成。
-		當太陽落山時，所有人都默默地聚集，沿著狹窄的
-		小路走向結構。多麼幸運，最初為採礦發明的炸藥，
-		現在可以服務於最偉大的目的。`,
-	"story.destroy-monolith-2": `你更近了。快到了。那可怕的、刺眼的景象，
-		無論在哪裡都阻擋著你的視線，隨著距離的減小而變大。
-		一旦到達門檻，炸藥就設置好了。一切都很安靜。
-		時刻到了。目的必須實現。工程師把觸發器交給你。
-		他跑了，絆倒了，撞到了頭，把頭撞開了。
-		那一刻的快樂證明難以承受。並非所有村民都離開了
-		爆炸區域，但沒有時間可以浪費。`,
-	"story.destroy-monolith-3": `粒子雨。塵土升起，然後落下。由巨石構成的觸手。
-		它們分裂、合併、衝鋒、重新加入。它很憤怒。
-		有損傷。我們成功了。一個接一個，刺穿心臟。
-		謝謝你，Gareth。再見，Kate。我很快樂。
-		我們一起做到了。觸手，現在協調了。抓住我的朋友。
-		把他們拉進去，那裡空間停止了。這無關緊要。
-		我們只是偉大計畫中的一個齒輪。可怕、難以忍受的痛苦。
-		我很快樂。我們開始的，其他人將完成。它現在
-		正在帶走我。無限的黑暗。它受損了，湧出。
-		其他村莊將出現。時間停止了，現在只有思想。
-		其他人將進一步造成損害。偉大的工作將完成。
-		巨石必須倒下。巨石必須倒下。`,
+	"story.intro": `這是一個陽光明媚的日子，你站在森林空地的中央。你的左邊是一條閃閃發光的河流，裡面滿是魚，附近的山脈有望提供豐富的建築材料。是什麼吸引了你來到這個地方？是逃離城市喧囂的可能性嗎？還是你對遠處那座巨大的黑色結構感到好奇？無論你的原因是什麼，你上岸了。是時候開始你在定居點的工作了。`,
+	"story.survey-monolith": `你組織了一個調查隊，向巨石進發。僅僅到達它就花了幾天時間，這證明了它比從遠處看起來要大得多。你很幸運準備了足夠的食物。一旦到達，就好像現實在結構的邊界處停止了。它有著閉上眼睛時的顏色，這讓你深感不安，你盡量不看它。觸摸時，它的表面完全光滑，無法用你手頭的任何工具鑿開。它是什麼？它為什麼在這裡？問題仍然沒有答案，你的隊伍回家了。`,
+	"story.study-monolith": `你召集了村莊裡最優秀的人才，再次向巨石進發。他們的測量儀器揭示了一個令人擔憂的結果。巨石顯示有數百萬度的溫度，儘管觸摸起來令人愉快地涼爽。所有其他測量都失敗了，結果要麼是零，要麼是遠遠超出量程的值。無論如何，這個物體不應該存在於你的現實中，更不用說有穩定地站在那裡，冷酷而不變。將所有能量保留給自己。它怎麼敢。`,
+	"story.destroy-monolith-1": `這是一個陽光明媚的日子，你勤勞的村民醒來前往他們的工作場所，一路上唱著歡快的歌曲。但是，今天是特殊的一天，因為今晚這項任務將完成。當太陽落山時，所有人都默默地聚集，沿著狹窄的小路走向結構。多麼幸運，最初為採礦發明的炸藥，現在可以服務於最偉大的目的。`,
+	"story.destroy-monolith-2": `你更近了。快到了。那可怕的、刺眼的景象，無論在哪裡都阻擋著你的視線，隨著距離的減小而變大。一旦到達門檻，炸藥就設置好了。一切都很安靜。時刻到了。目的必須實現。工程師把觸發器交給你。他跑了，絆倒了，撞到了頭，把頭撞開了。那一刻的快樂證明難以承受。並非所有村民都離開了爆炸區域，但沒有時間可以浪費。`,
+	"story.destroy-monolith-3": `粒子雨。塵土升起，然後落下。由巨石構成的觸手。它們分裂、合併、衝鋒、重新加入。它很憤怒。有損傷。我們成功了。一個接一個，刺穿心臟。謝謝你，Gareth。再見，Kate。我很快樂。我們一起做到了。觸手，現在協調了。抓住我的朋友。把他們拉進去，那裡空間停止了。這無關緊要。我們只是偉大計劃中的一個齒輪。可怕、難以忍受的痛苦。我很快樂。我們開始的，其他人將完成。它現在正在帶走我。無限的黑暗。它受損了，湧出。其他村莊將出現。時間停止了，現在只有思想。其他人將進一步造成損害。偉大的工作將完成。巨石必須倒下。巨石必須倒下。`,
 };
